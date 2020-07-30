@@ -9,21 +9,25 @@
     <ScrollView
             android:id="@+id/tools"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="horizontal">
-            <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:onClick="centerText" android:text="Center"/>
-            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bold"
-                    android:onClick="boldText"/>
+            <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                         android:src="@drawable/ic_format_align_center_black_24dp" android:onClick="centerText"/>
+            <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                         android:src="@drawable/ic_format_bold_black_24dp"
+                         android:onClick="boldText"/>
+            <EditText android:id="@+id/fontSizeEditText" android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:inputType="numberDecimal" android:hint="Font Size"/>
         </LinearLayout>
     </ScrollView>
     <jp.wasabeef.richeditor.RichEditor
             android:id="@+id/editor"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:layout_constraintTop_toBottomOf="@id/tools"
-    />
+            android:layout_height="0dp" app:layout_constraintBottom_toTopOf="@+id/tools"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0" app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
